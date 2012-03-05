@@ -7,10 +7,6 @@ of EHCP user accounts.
 
 //===========VARIABLES===============
 
-if(isset($_POST['username'])){
-echo $_POST['username'];
-echo $_POST['password'];
-}
 //link to the EHCP home panel.....
 $domain="http://ehcp.pessetto.com";
 $username = "admin";//administrator username
@@ -47,7 +43,7 @@ $result = curl_exec($connection);
 //===OKAY WE SHOULD BE LOGGED IN...GO MAKE A USER....
 $op="addDomain";
 
-$fields = array('domainname'=>urlencode('batmandomain.com'),'panelusername'=>urlencode("batman"),'paneluserpassword'=>urlencode("password"),'ftpusername'=>urlencode('batman'),'ftppassword'=>urlencode('password'),'quota'=>urlencode('100'),'upload'=>urlencode("200"),'download'=>urlencode("200"),'email'=>urlencode("batman@thebatmobilespot.com"),'op'=>urlencode($op),'_insert'=>urlencode("1"));
+$fields = array('domainname'=>urlencode($_POST['doamin']),'panelusername'=>urlencode("batman"),'paneluserpassword'=>urlencode("password"),'ftpusername'=>urlencode('batman'),'ftppassword'=>urlencode('password'),'quota'=>urlencode('100'),'upload'=>urlencode("200"),'download'=>urlencode("200"),'email'=>urlencode("batman@thebatmobilespot.com"),'op'=>urlencode($op),'_insert'=>urlencode("1"));
 
 $fields_string = "";//reset string to prevent previous data.
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }

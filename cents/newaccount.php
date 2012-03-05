@@ -8,6 +8,7 @@ of EHCP user accounts.
 require("./dime-config.php");
 require("./objects/adminLogin.php");
 
+
 //connection currentConnection= new connection();
 //currentConnection.doAdminLogin($domain,$username,$password,$cookieFile);
 
@@ -42,7 +43,7 @@ $result = curl_exec($connection);
 //===OKAY WE SHOULD BE LOGGED IN...GO MAKE A USER....
 $op="addDomain";
 
-$fields = array('domainname'=>urlencode('batmandomain.com'),'panelusername'=>urlencode("batman"),'paneluserpassword'=>urlencode("password"),'ftpusername'=>urlencode('batman'),'ftppassword'=>urlencode('password'),'quota'=>urlencode('100'),'upload'=>urlencode("200"),'download'=>urlencode("200"),'email'=>urlencode("batman@thebatmobilespot.com"),'op'=>urlencode($op),'_insert'=>urlencode("1"));
+$fields = array('domainname'=>urlencode($_POST['domain']),'panelusername'=>urlencode($_POST['paneluser']),'paneluserpassword'=>urlencode($_POST['panelpassword']),'ftpusername'=>urlencode($_POST['paneluser']),'ftppassword'=>urlencode($_POST['panelpassword']),'quota'=>urlencode('1000'),'upload'=>urlencode("200"),'download'=>urlencode("200"),'email'=>urlencode($_POST['email']),'op'=>urlencode($op),'_insert'=>urlencode("1"));
 
 $fields_string = "";//reset string to prevent previous data.
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
