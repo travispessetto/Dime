@@ -13,3 +13,9 @@ Simply download and upload all files and adjust variables to your settings.
 #If you would like contribute
 
 Branch the project and send me a pull request.
+
+##Things to contribute:
+
+*Connection to database to pull plans from
+*Installation Script
+*Modules to connect with Paypal, Google Checkout, Authorize.net
